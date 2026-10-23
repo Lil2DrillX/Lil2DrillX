@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lil2DrillX Shop — Интернет-магазин винила</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-content">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-record-vinyl logo-icon"></i>
+                <span>Lil2DrillX<strong>Shop</strong></span>
+            </a>
+            
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="searchInput" class="search-input" placeholder="Поиск альбома или исполнителя...">
+            </div>
+            
+            <button class="cart-btn-trigger" id="openCartBtn">
+                <i class="fa-solid fa-cart-shopping cart-icon"></i>
+                <div class="cart-info">
+                    <span class="cart-label">Корзина</span>
+                    <span class="cart-values"><strong id="cartCount">0</strong> шт. • <strong id="cartTotal">0</strong> ₸</span>
+                </div>
+            </button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <span class="hero-tag">Эксклюзивный релиз</span>
+                <h1>Аналоговый звук для настоящих ценителей</h1>
+                <p>Metal, Rock, Phonk и эксклюзивные издания на тяжелом виниле с доставкой.</p>
+            </div>
+        </div>
+    </section>
+
+    <main class="container main-layout">
+        
+        <aside class="sidebar">
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">Жанры</h3>
+                <ul class="category-list" id="categoryList">
+                    <li class="active" data-genre="all"><span>Все жанры</span></li>
+                    <li data-genre="Metal"><span>Metal</span></li>
+                    <li data-genre="Phonk"><span>Phonk</span></li>
+                    <li data-genre="Rock"><span>Rock</span></li>
+                </ul>
+            </div>
+        </aside>
+
+        <section class="content">
+            <div class="catalog-header">
+                <h2>Каталог альбомов</h2>
+                <p class="catalog-subtitle">Выберите пластинку из нашей коллекции</p>
+            </div>
+            <div class="products-grid" id="productsGrid">
+               
+            </div>
+        </section>
+
+    </main>
+
+    <div class="modal-overlay" id="productModal">
+        <div class="modal-card">
+            <button class="modal-close" id="closeProductModal">&times;</button>
+            <div class="product-modal-body" id="productModalBody"></div>
+        </div>
+    </div>
+
+ 
+    <div class="cart-drawer-overlay" id="cartOverlay"></div>
+    <aside class="cart-drawer" id="cartDrawer">
+        <div class="cart-drawer-header">
+            <h3>Ваша корзина</h3>
+            <button class="modal-close" id="closeCartBtn">&times;</button>
+        </div>
+        <div class="cart-drawer-body" id="cartDrawerBody"></div>
+        <div class="cart-drawer-footer">
+            <div class="cart-summary-row">
+                <span>Итого к оплате:</span>
+                <strong id="cartDrawerTotal">0 ₸</strong>
+            </div>
+            <button class="btn-checkout" id="checkoutBtn">Оформить заказ</button>
+        </div>
+    </aside>
+
+    
+    <div class="modal-overlay" id="checkoutModal">
+        <div class="modal-card modal-card-sm">
+            <button class="modal-close" id="closeCheckoutModal">&times;</button>
+            <h3 class="modal-title">Оформление заказа</h3>
+            <form id="checkoutForm">
+                <div class="form-group">
+                    <label>ФИО</label>
+                    <input type="text" required placeholder="Введите ваше имя">
+                </div>
+                <div class="form-group">
+                    <label>Номер телефона</label>
+                    <input type="tel" required placeholder="+7 (___) ___-__-__">
+                </div>
+                <div class="form-group">
+                    <label>Адрес доставки</label>
+                    <input type="text" required placeholder="Город, улица, дом">
+                </div>
+                <div class="form-group">
+                    <label>Способ оплаты</label>
+                    <select>
+                        <option>Kaspi QR / Перевод</option>
+                        <option>Банковской картой</option>
+                        <option>Наличными курьеру</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-checkout">Подтвердить заказ</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <p class="author-credits">Выполнил студент: <strong>Кулябин Артём</strong></p>
+            <p>© 2026 <strong>Lil2DrillX Shop</strong>. Курсовой проект-ПРОЕКТ "ВЕБ-РАЗРАБОТКА И ВЕБ-ДИЗАЙН".</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
